@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, request, redirect, session
-from dotenv import load_dotenv
+
 app = Flask(__name__)
 app.secret_key = "mustang_secret_key"
 PASSWORD = os.getenv("APP_PASSWORD")
