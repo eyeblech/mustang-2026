@@ -1,0 +1,267 @@
+/* ========================= */
+/* GLOBAL STYLES */
+/* ========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:wght@600;700&display=swap');
+
+body {
+    margin: 0;
+    background: #0a0a0a;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 120px 8%;
+}
+
+/* ========================= */
+/* HERO SECTION */
+/* ========================= */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* Dark overlay on video */
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8));
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* HERO TITLE */
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 100px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin: 0;
+    background: linear-gradient(90deg, #ffffff, #00ffc8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* HERO TAGLINE */
+.hero p {
+    font-size: 22px;
+    letter-spacing: 4px;
+    margin-top: 20px;
+    opacity: 0.85;
+}
+
+/* ========================= */
+/* SCROLL DOWN MOUSE ICON */
+/* ========================= */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mouse {
+    width: 28px;
+    height: 45px;
+    border: 2px solid white;
+    border-radius: 20px;
+    position: relative;
+}
+
+.mouse::before {
+    content: "";
+    width: 4px;
+    height: 8px;
+    background: white;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4px;
+    animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+    0% { opacity: 1; top: 8px; }
+    100% { opacity: 0; top: 25px; }
+}
+
+/* ========================= */
+/* VIDEO SECTION */
+/* ========================= */
+
+/* SECTION */
+.video-section {
+  padding: 80px 20px;
+  background: #000;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* TITLE */
+.section-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+}
+
+/* VIDEO WRAPPER */
+.video-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(0, 255, 200, 0.15);
+  background: #111;
+}
+
+/* IFRAME */
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ========================= */
+/* GALLERY */
+/* ========================= */
+
+.gallery {
+    padding: 100px 5%;
+}
+
+.masonry {
+    column-count: 3;
+    column-gap: 20px;
+}
+
+.masonry img {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 18px;
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+
+.masonry img:hover {
+    transform: scale(1.05);
+}
+
+/* ========================= */
+/* MAP */
+/* ========================= */
+
+#map {
+    height: 450px;
+    width: 90%;
+    margin: auto;
+    border-radius: 20px;
+}
+
+/* ========================= */
+/* ARCHIVE LINKS */
+/* ========================= */
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.links a {
+    padding: 20px 35px;
+    background: #111;
+    border: 1px solid #00ffc8;
+    color: #00ffc8;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.links a:hover {
+    background: #00ffc8;
+    color: black;
+}
+
+/* ========================= */
+/* CREW SECTION */
+/* ========================= */
+
+.crew {
+    list-style: none;
+    padding: 0;
+    font-size: 22px;
+    letter-spacing: 3px;
+}
+
+.crew li {
+    margin: 18px 0;
+}
+
+/* ========================= */
+/* SCROLL FADE ANIMATION */
+/* ========================= */
+
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s ease;
+}
+
+.fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================= */
+/* LOGIN PAGE */
+/* ========================= */
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background: #111;
+    padding: 50px;
+    border-radius: 15px;
+}

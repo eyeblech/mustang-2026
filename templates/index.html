@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mustang 2026</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script defer src="/static/script.js"></script>
+
+    <!-- Leaflet Map CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+
+<!-- HERO VIDEO -->
+<div class="hero">
+    
+    <video autoplay muted loop id="bg-video">
+        <source src="/static/demo.mkv" type="video/mp4">
+    </video>
+    <div class="overlay">
+        <h1>Mustang 2026</h1>
+        <p>Altitude. Brotherhood. Freedom.</p>
+    </div>
+    <div class="scroll-indicator">
+        <div class="mouse"></div>
+    </div>
+</div>
+
+<section class="video-section fade">
+    <h2 class="section-title">Trip Highlights</h2>
+
+    <div class="video-wrapper">
+        <iframe
+            src="https://www.youtube.com/embed/ItuZ-dmcye4?rel=0&modestbranding=1"
+            allowfullscreen
+            loading="lazy">
+        </iframe>
+    </div>
+</section>
+
+<section class="gallery fade">
+    <h2 class="section-title">Moments From The Ride</h2>
+    <div class="masonry">
+        {% for image in images %}
+            <img src="{{ url_for('static', filename='images/' + image) }}">
+        {% endfor %}
+    </div>
+</section>
+
+<!-- MAP -->
+<section class="fade">
+    <h2>Route Map</h2>
+    <div id="map"></div>
+</section>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+    <source src="/static/audio/music.flac" type="audio/mp3">
+</audio>
+
+<!-- DRIVE LINK -->
+<section class="archive fade">
+    <h2>Full Archive</h2>
+    <div class="links">
+        <a href="https://drive.google.com/drive/folders/1B-LXbCLLXHWzjYRRnkc9HI3IS3ZUuTqB" target="_blank">karki [vids]</a>
+        <a href="https://drive.google.com/drive/folders/1uyqqZnETxN_SbukSiQcztZJGF7APyFNB" target="_blank">karki [pics]</a>
+        <a href="https://drive.google.com/drive/folders/1SlVk4ZwWztNsIV5m4v1VwAxLtorOEuw4?usp=sharing" target="_blank">anish [pics]</a>
+        <a href="https://mega.nz/collection/20ICDDZK#dGfUetLt4AyzhP5-5Y8TvQ" target="_blank">karki mega backup</a>
+    </div>
+</section>
+
+
+</body>
+</html>
